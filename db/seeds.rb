@@ -14,7 +14,7 @@ puts "111111"
   User.create email: Faker::Internet.email, password: '111111'
 end
 
-500.times do |counter|
+100.times do |counter|
   puts "Inserting Person #{counter}"
 
   attrs = {
@@ -33,4 +33,13 @@ end
       observation: Faker::Lorem.paragraph
     )
   end
+
+  5.times do |payments_counter|
+    puts "Inserting Payment #{payments_counter}"
+    person.payments.create(
+      amount: Faker::Number.between(from: 1, to: 200),
+      paid_at: Faker::Date.between(from: '2020-01-02', to: '2023-05-25')
+    )
+  end
+
 end
