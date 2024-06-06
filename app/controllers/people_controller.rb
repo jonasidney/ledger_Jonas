@@ -53,7 +53,7 @@ class PeopleController < ApplicationController
 
     respond_to do |format|
       if @person.save
-        format.html { redirect_to person_url(@person), notice: "Criado com sucesso." }
+        format.html { redirect_to person_url(@person), notice: "Cadastrado com sucesso." }
         format.json { render :show, status: :created, location: @person }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -80,7 +80,7 @@ class PeopleController < ApplicationController
     @person.destroy!
 
     respond_to do |format|
-      format.html { redirect_to people_url, notice: "Removido." }
+      format.html { redirect_to people_url, notice: "Removido com sucesso." }
       format.json { head :no_content }
     end
   end

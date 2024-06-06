@@ -6,6 +6,6 @@ class ReportsController < ApplicationController
   
     def balance
         UserMailer.balance_report_email(current_user).deliver_later
-      redirect_to root_path, notice: 'O relatório foi enviado para seu e-mail.'
+      redirect_to root_path, notice: 'Relatório enviado para o e-mail cadastrado.'
     end
   end
